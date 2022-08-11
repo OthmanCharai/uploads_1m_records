@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Criteria\CriteriaController;
 use App\Http\Controllers\CsvController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/',[CsvController::class,'index']);
-Route::post('/upload',[CsvController::class,'store'])->name('store');
-Route::get('/save',[CsvController::class,'store_file'])->name('file');
+Route::post('/store',[CsvController::class,"store"])->name('store');
+Route::get('/batch',[CsvController::class,"batch"]);
